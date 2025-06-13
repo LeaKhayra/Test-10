@@ -1,8 +1,9 @@
 $(document).ready(function() {
+    let currentIndex = 0; // Initialize index
     if ($('#lightbox').length && $('.gallery-grid').length) {
         const images = $('.gallery-image');
-        
-        // Open lightbox when clicking an image
+
+        // Open lightbox
         $('.gallery-grid').on('click', '.gallery-image', function() {
             currentIndex = $('.gallery-image').index(this);
             updateLightbox();
@@ -11,17 +12,20 @@ $(document).ready(function() {
 
         // Close lightbox
         $('.close-btn').on('click', function() {
+            console.log('Close button clicked'); // Debug
             $('#lightbox').fadeOut(300);
         });
 
         // Previous image
         $('.prev-btn').on('click', function() {
+            console.log('Prev button clicked'); // Debug
             currentIndex = (currentIndex - 1 + images.length) % images.length;
             updateLightbox();
         });
 
         // Next image
         $('.next-btn').on('click', function() {
+            console.log('Next button clicked'); // Debug
             currentIndex = (currentIndex + 1) % images.length;
             updateLightbox();
         });
@@ -41,12 +45,11 @@ $(document).ready(function() {
             }
         });
 
-        // Update lightbox image and alt text
         function updateLightbox() {
-    const src = images.eq(currentIndex).attr('src');
-    const alt = images.eq(currentIndex).attr('alt');
-    $('#lightbox-img').attr({ src: src, alt: alt });
-    console.log('Updated lightbox with src:', src); // Debug
+            const src = images.eq(currentIndex).attr('src');
+            const alt = images.eq(currentIndex).attr('alt');
+            $('#lightbox-img').attr({ src: src, alt: alt });
+            console.log('Updated lightbox with src:', src); // Debug
         }
     }
 });

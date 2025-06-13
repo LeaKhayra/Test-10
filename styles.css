@@ -350,6 +350,30 @@ p, a, input, button {
     border-radius: 10px;
     animation: fadeIn 0.3s;
 }
+.close-btn, .prev-btn, .next-btn {
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.close-btn {
+    top: 10px;
+    right: 10px;
+}
+
+.prev-btn {
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.next-btn {
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {

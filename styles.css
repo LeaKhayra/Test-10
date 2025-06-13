@@ -332,6 +332,9 @@ p, a, input, button {
     align-items: center;
     z-index: 1000;
 }
+.lightbox-content {
+    text-align: center; /* Ensure the image is centered */
+}
 
 .lightbox img {
     max-width: 80%; /* Smaller max-width */

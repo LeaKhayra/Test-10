@@ -43,9 +43,10 @@ $(document).ready(function() {
 
         // Update lightbox image and alt text
         function updateLightbox() {
-            const src = images.eq(currentIndex).attr('src');
-            const alt = images.eq(currentIndex).attr('alt');
-            $('#lightbox-img').attr({ src: src, alt: alt });
+    const src = images.eq(currentIndex).attr('src');
+    const alt = images.eq(currentIndex).attr('alt');
+    $('#lightbox-img').attr({ src: src, alt: alt });
+    console.log('Updated lightbox with src:', src); // Debug
         }
     }
 });
